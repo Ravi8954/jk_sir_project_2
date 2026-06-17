@@ -2,7 +2,8 @@ on:
   push:
 jobs:
   my_first_job:
-    name: first job         
+    name: first job
+    continue-on-error: true
     runs-on: ubuntu-slim
     steps:
       - run: echo "my first job ran successful"
@@ -13,3 +14,6 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - run: echo "my second job job ran successful"
+      
+# pahle job ko run karne do and agar wo successful tab tu chal ja
+# needs, continue on error, if: always

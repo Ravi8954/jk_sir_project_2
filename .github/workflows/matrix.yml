@@ -1,0 +1,11 @@
+on:
+  push:
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        os:[ubuntu-latest,windowslatest,macos-latest]
+    name: matrix job
+    runs-on: ${{matrix.os}}
+    steps:
+      - run: echo "hello world"

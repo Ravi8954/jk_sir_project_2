@@ -1,7 +1,11 @@
 name: githubtrigeraction
 on:
-  workflow_dispatch:
-
+  # workflow_dispatch:
+  push:  # fully atomatic
+    branches:
+      - main
+      - feature
+      - develop
 jobs:
   first_job:
     name: first job

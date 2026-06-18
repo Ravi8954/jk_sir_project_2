@@ -10,24 +10,22 @@ on:
 
 jobs:
 terraform_init_plan:
-name: Terraform Init and Plan
+  name: Terraform Init and Plan
 runs-on: ubuntu-latest
 steps:
-- name: Terraform Setup
+  - name: Terraform Setup
 uses: hashicorp/setup-terraform@v
 with:
-terraform_version:
-- name: Checkout Repository
-  uses: actions/checkout@v6.0.3
-- name: terraform init
-  run: terraform init
-- name: terraform validate
-  run: terraform validate
+  terraform_version:
+    - name: Checkout Repository
+      uses: actions/checkout@v6.0.3
+    - name: terraform init
+      run: terraform init
+    - name: terraform validate
+      run: terraform validate
+    
+    - name: terraform plan
+    run: terraform plan
 
 
-
-
-- name: terraform plan
-run: terraform plan
-
-h.7.6
+    
